@@ -22,6 +22,8 @@ RUN mamba create -n dsmode
 # activate env
 RUN mamba activate dsmode
 
+RUN mamba init
+
 # install python libraries
 RUN mamba install "pandas==1.5.2"
 RUN mamba install "numpy==1.24.1"

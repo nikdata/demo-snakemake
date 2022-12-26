@@ -25,6 +25,9 @@ RUN apt-get update \
 # copy environment over
 COPY environment.yml .
 
+# install enviroment based on yaml file
+RUN mamba env create -f environment.yml
+
 # activate env
 # source: https://stackoverflow.com/questions/69127725/mamba-installing-a-package-into-wrong-environment
 RUN echo "conda activate dsmode" >> ~/.bashrc

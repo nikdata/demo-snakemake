@@ -23,11 +23,12 @@ RUN mamba create -n dsmode
 RUN mamba init
 
 # activate env
-RUN mamba activate dsmode
+# RUN mamba activate dsmode
+RUN echo "conda activate dsmode" >> ~/.bashrc
 
 # install python libraries
-RUN mamba install "pandas==1.5.2"
-RUN mamba install "numpy==1.24.1"
-RUN mamba install "matplotlib==3.6.2"
-RUN mamba install "plotly==5.11.0"
+RUN mamba install -n dsmode "pandas==1.5.2"
+RUN mamba install -n dsmode "numpy==1.24.1"
+RUN mamba install -n dsmode  "matplotlib==3.6.2"
+RUN mamba install -n dsmode  "plotly==5.11.0"
 

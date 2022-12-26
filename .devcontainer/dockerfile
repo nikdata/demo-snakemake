@@ -20,7 +20,7 @@ RUN apt-get update \
 RUN mamba create -n dsmode
 
 # activate env
-RUN conda activate dsmode
+RUN mamba activate dsmode
 
 # install python libraries
 RUN mamba install "pandas==1.5.2"

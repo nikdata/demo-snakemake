@@ -2,7 +2,6 @@
 	"name": "Snakemake Demo",
 	"build": {
 		"dockerfile": "dockerfile",
-
 	},
 
 	// Set *default* container specific settings.json values on container create.
@@ -12,7 +11,10 @@
 		"r.plot.useHttpgd": true,
 		"[r]": {
 			"editor.wordSeparators": "`~!@#%$^&*()-=+[{]}\\|;:'\",<>/?"
-		}
+		},
+        "jupyter.sendSelectionToInteractiveWindow": true,
+        //change the name of the environment in line below to match what you have in the environment.yml file
+        "python.defaultInterpreterPath": "/opt/conda/envs/dsmode/bin/python"
 	},
 
 	// Add the IDs of extensions you want installed when the container is created.

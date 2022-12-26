@@ -17,20 +17,23 @@ RUN apt-get update \
     bzip2
 
 # create environment
-RUN mamba create -n dsmode
+# RUN mamba create -n dsmode
 
 # initialize mamba
-RUN mamba init
+# RUN mamba init
+
+# copy environment over
+COPY environment.yml .
 
 # activate env
-# RUN mamba activate dsmode
+# source: https://stackoverflow.com/questions/69127725/mamba-installing-a-package-into-wrong-environment
 RUN echo "conda activate dsmode" >> ~/.bashrc
 SHELL ["/bin/bash", "--login", "-c"]
 
 # install python libraries
-RUN mamba install -n dsmode -y "pandas==1.5.2"
-RUN mamba install -n dsmode -y "numpy==1.24.0"
-RUN mamba install -n dsmode -y "matplotlib==3.6.2"
-RUN mamba install -n dsmode -y "plotly==5.11.0"
-RUN mamba install -n dsmode -y "jupyterlab==3.5.2"
+# RUN mamba install -n dsmode -y "pandas==1.5.2"
+# RUN mamba install -n dsmode -y "numpy==1.24.0"
+# RUN mamba install -n dsmode -y "matplotlib==3.6.2"
+# RUN mamba install -n dsmode -y "plotly==5.11.0"
+# RUN mamba install -n dsmode -y "jupyterlab==3.5.2"
 

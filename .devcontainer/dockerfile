@@ -19,10 +19,11 @@ RUN apt-get update \
 # create environment
 RUN mamba create -n dsmode
 
+# initialize mamba
+RUN mamba init
+
 # activate env
 RUN mamba activate dsmode
-
-RUN mamba init
 
 # install python libraries
 RUN mamba install "pandas==1.5.2"

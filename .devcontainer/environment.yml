@@ -2,6 +2,7 @@ name: dsmode
 
 channels:
   - conda-forge
+  - bioconda # needed for snakemake
   - defaults
 
 dependencies:

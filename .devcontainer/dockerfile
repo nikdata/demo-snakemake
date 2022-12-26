@@ -1,0 +1,30 @@
+# base image
+FROM condaforge/mambaforge:22.9.0-2
+
+# update
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+    libglpk40 \
+    htop \
+    jq \
+    libxtst6 \
+    libxt6 \
+    xdg-utils \
+    nano \
+    python3-pip \
+    curl \
+    tar \
+    bzip2
+
+# create environment
+RUN mamba create -n dsmode
+
+# activate env
+RUN conda activate dsmode
+
+# install python libraries
+RUN mamba install "pandas==1.5.2"
+RUN mamba install "numpy==1.24.1"
+RUN mamba install "matplotlib==3.6.2"
+RUN mamba install "plotly==5.11.0"
+
